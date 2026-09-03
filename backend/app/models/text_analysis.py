@@ -6,7 +6,7 @@ class TextAnalysisRequest(BaseModel):
 
 
 class TextAnalysisResponse(BaseModel):
-    word_count: int
+    words_count: int
     sentences_count: int
     total_syllables: int
     avg_syllables_per_word: float

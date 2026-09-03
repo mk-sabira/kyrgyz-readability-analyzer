@@ -10,7 +10,7 @@ def analyze(request: TextAnalysisRequest):
     kyrgyz_result = analyze_kyrgyz_readability(request.text)
 
     return TextAnalysisResponse(
-        word_count=ari_result["word_count"],
+        words_count=ari_result["words_count"],
         sentences_count=ari_result["sentences_count"],
         total_syllables=kyrgyz_result["total_syllables"],
         avg_syllables_per_word=kyrgyz_result["avg_syllables_per_word"],

@@ -36,20 +36,20 @@ def analyze_text(text: str)-> dict:
     words = split_into_words(text)
     sentences = split_into_sentences(text)
 
-    word_count = len(words)
+    words_count = len(words)
     sentences_count = len(sentences)
     characters_count = sum(len(word) for word in words)
 
-    if word_count == 0 or sentences_count == 0:
+    if words_count == 0 or sentences_count == 0:
         return {"error": "Text has no valid words or sentences"}
 
-    avg_characters_per_word = characters_count / word_count
-    avg_words_per_sentence = word_count / sentences_count
+    avg_characters_per_word = characters_count / words_count
+    avg_words_per_sentence = words_count / sentences_count
 
     ari_score = (4.71 * avg_characters_per_word) + (0.5 * avg_words_per_sentence) - 21.43
 
     return {
-        "word_count": word_count,
+        "words_count": words_count,
         "sentences_count": sentences_count,
         "characters_count": characters_count,
         "avg_characters_per_word": round(avg_characters_per_word, 2),
@@ -63,21 +63,21 @@ def analyze_kyrgyz_readability(text: str)-> dict:
     words = split_into_words(text)
     sentences = split_into_sentences(text)
 
-    word_count = len(words)
+    words_count = len(words)
     sentences_count = len(sentences)
 
-    if word_count == 0 or sentences_count == 0:
+    if words_count == 0 or sentences_count == 0:
         return {"error": "Text has no valid words or sentences"}
 
     total_syllables = sum(count_syllables_in_word(word) for word in words)
 
-    avg_syllables_per_word = total_syllables / word_count
-    avg_words_per_sentence = word_count / sentences_count
+    avg_syllables_per_word = total_syllables / words_count
+    avg_words_per_sentence = words_count / sentences_count
 
     readability_score = 198.825 - (40.175 * avg_syllables_per_word) - (2.610 * avg_words_per_sentence)
 
     return{
-        "word_count": word_count,
+        "words_count": words_count,
         "sentences_count": sentences_count,
         "total_syllables": total_syllables,
         "avg_syllables_per_word": round(avg_syllables_per_word, 2),
