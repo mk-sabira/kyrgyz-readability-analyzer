@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #ffffff;
+  --color-paper-soft: #f4f8fb;
+  --color-ink: #1b2a41;
+  --color-primary: #2d9cdb;
+  --color-primary-dark: #1c7cb8;
+  --color-accent: #e8871e;
+  --color-accent-dark: #c76f12;
+
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+}

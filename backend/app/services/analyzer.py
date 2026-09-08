@@ -32,6 +32,7 @@ def split_into_sentences(text: str)-> list[str]:
 
     return sentences
 
+
 def analyze_text(text: str)-> dict:
     words = split_into_words(text)
     sentences = split_into_sentences(text)
