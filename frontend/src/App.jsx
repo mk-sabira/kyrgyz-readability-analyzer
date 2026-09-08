@@ -1,13 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
-import Banner from './components/Banner'
-import BookLibrary from './components/BookLibrary'
+import AnalyzePage from './pages/AnalyzePage'
+import HomePage from './pages/HomePage'
 
 function App() {
   return (
     <div className="min-h-screen bg-paper-soft">
       <Header />
-      <Banner />
-      <BookLibrary />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/analyze" element={<AnalyzePage />} />
+      </Routes>
     </div>
   )
 }

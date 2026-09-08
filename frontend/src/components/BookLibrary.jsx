@@ -11,7 +11,7 @@ function BookLibrary() {
   }, [ageFilter])
 
   return (
-    <section className="bg-paper py-16">
+    <section id="library" className="bg-paper py-16">
       <div className="max-w-6xl mx-auto px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
           <div>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Banner() {
   return (
     <section className="bg-paper-soft">
@@ -15,12 +17,18 @@ function Banner() {
               Explore our library, track progress, and grow a love for Kyrgyz literature.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-primary hover:bg-primary-dark text-white font-body font-medium px-6 py-3 rounded-full transition-colors">
+              <a
+                href="/#library"
+                className="bg-primary hover:bg-primary-dark text-white font-body font-medium px-6 py-3 rounded-full transition-colors"
+              >
                 Browse Library
-              </button>
-              <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-body font-medium px-6 py-3 rounded-full transition-colors">
+              </a>
+              <Link
+                to="/analyze"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-body font-medium px-6 py-3 rounded-full transition-colors"
+              >
                 Analyze Text
-              </button>
+              </Link>
             </div>
           </div>
 
