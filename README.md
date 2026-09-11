@@ -13,7 +13,7 @@ Kyrgyz is a low-resource language with very little existing NLP tooling. This pr
 The project is split into two services:
 
 1. **Backend (`/backend`)** — a FastAPI service exposing the Kyrgyz text readability analyzer as an API.
-2. **Frontend (`/frontend`)** — a React web app for browsing the book library, with UI already in place for the login and text-analysis features described in the roadmap below.
+2. **Frontend (/frontend)** — a React web app for browsing the book library and analyzing Kyrgyz text readability. Login UI is in place but not yet wired to authentication (see Roadmap).
 
 ---
 
@@ -42,7 +42,6 @@ The project is split into two services:
 ## Scope of the MVP
 
 This is a functioning proof of concept, not yet a production product. Deliberately out of scope for this phase:
-- Frontend/backend integration 
 - Persistent storage — the book catalog is currently sample data, not a database
 - User accounts and authentication
 - Automated tests, CI/CD, and deployment infrastructure
@@ -101,14 +100,13 @@ App at `http://localhost:5173`.
 }
 ```
 
-**`GET /health`** → `{ "status": "health ok" }`
+**`GET /health`** → { "status": "ok" }
 
 ---
 
 ## Roadmap
 
 **Phase 2 — Product foundation**
-- Build the Analyze page and wire it to `POST /analyze` (see **Planned: Analyze flow** above) — the highest-priority next step since the backend for it already works
 - Books database: replace the hardcoded catalog with real persistent storage
 - Reading flow: when a user opens a book to read, the frontend fetches the book's content from the backend (new endpoint, e.g. `GET /books/{id}`) instead of using static data
 - User registration and login: build real auth behind the existing "Login" button in the header
