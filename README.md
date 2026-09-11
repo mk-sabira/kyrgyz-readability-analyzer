@@ -31,19 +31,11 @@ The project is split into two services:
 - Returns word, sentence, character, and syllable counts alongside both readability scores
 
 ### Frontend
-- React 19 + Vite 8 + Tailwind CSS v4
+- React 19 + Vite 8 + Tailwind CSS v4, with React Router for client-side routing
 - Landing page with header, hero banner, and a filterable book library (by age group: 6–7, 8–9, 10–11, 12+)
-- Login button and "Analyze" nav link already present in the UI as placeholders — not yet wired to any logic (see **Analyze flow** below for the intended behavior)
+- Analyze page (`/analyze`): submits text to the backend's `POST /analyze` and displays word/sentence/syllable counts alongside ARI and Kyrgyz readability scores — implemented and working end-to-end
+- Login button present in the header UI as a placeholder — not yet wired to any logic (auth doesn't exist yet, see Roadmap)
 - Sample catalog of 6 books to demonstrate the library UI
-
-### Planned: Analyze flow (Phase 2)
-The "Analyze" link in the header is the entry point for the core NLP feature:
-1. User clicks **Analyze** in the header.
-2. App navigates to a dedicated Analyze page (not built yet — no routing library is installed yet, see Tech stack).
-3. User types or pastes Kyrgyz text into a text box and presses an **Analyze** button.
-4. The page sends the text to `POST /analyze` on the backend and displays the returned readability metrics (word/sentence/syllable counts, ARI score, readability score) on the same page.
-
-The backend side of this (the `/analyze` endpoint) already works standalone today — only the frontend page and the fetch call connecting to it are missing.
 
 ---
 
